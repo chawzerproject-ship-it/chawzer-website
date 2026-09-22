@@ -1,6 +1,6 @@
 # 👁️ CHAWZER • Altın Göz Mobil Uygulama Stüdyosu
 
-> **"Chawzer"**,  **""** (*Çav* = Göz, *Zêr* = Altın) anlamına gelmektedir.  
+> **"Chawzer"**,  **""** (Eye= Göz, Gol = Altın) anlamına gelmektedir.  
 > Bu web sitesi, Google Play ekosisteminde geliştirdiğiniz mobil uygulamalarınızı vitrine çıkaran, Google Play kapalı test (20 testçi) sürecini destekleyen ve **her uygulama için Play Store zorunlu Gizlilik Politikalarını** barındıran süper dinamik bir platformdur.
 
 ---

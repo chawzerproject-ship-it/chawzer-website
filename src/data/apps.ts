@@ -162,14 +162,15 @@ export const APPS_DATA: AppItem[] = [
 
 export const STUDIO_INFO = {
   name: "CHAWZER",
-  turkishMeaning: "Altın Göz ",
+  turkishMeaning: "Altın Göz (Kürtçe: Çav = Göz, Zêr = Altın)",
   tagline: "Mobil Dünyaya Keskin ve Vizyoner Bir Bakış",
   description: "CHAWZER, Google Play ekosisteminde kullanıcı odaklı, yüksek performanslı ve estetik mobil uygulamalar geliştiren bağımsız bir teknoloji stüdyosudur.",
   developerAccountId: "9194377217062714562",
   email: "chawzerproject@gmail.com",
+  googleGroupEmail: "chawzer-test-ekibi@googlegroups.com",
+  googleGroupUrl: "https://groups.google.com/g/chawzer-test-ekibi",
   playStoreConsoleUrl: "https://play.google.com/store/apps/developer?id=CHAWZER",
   totalApps: 4,
   location: "Türkiye",
   foundationYear: "2026"
 };
-

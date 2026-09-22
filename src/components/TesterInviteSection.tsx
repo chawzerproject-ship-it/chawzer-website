@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import confetti from "canvas-confetti";
-import { Users, Mail, CheckCircle2, Sparkles, Send, ShieldAlert, Smartphone } from "lucide-react";
+import { Users, Mail, CheckCircle2, Sparkles, Send, ShieldAlert, Smartphone, ExternalLink } from "lucide-react";
 import { APPS_DATA, AppItem, STUDIO_INFO } from "@/data/apps";
 
 interface TesterInviteSectionProps {
@@ -72,6 +72,42 @@ export default function TesterInviteSection({ selectedAppForBeta }: TesterInvite
             </p>
           </div>
 
+          {/* Quick 1-Click Google Group CTA */}
+          <div className="max-w-2xl mx-auto mb-10 p-5 sm:p-6 rounded-2xl bg-gradient-to-r from-amber-500/15 via-yellow-500/10 to-amber-500/15 border-2 border-amber-500/40 text-center space-y-3 shadow-xl shadow-amber-500/10">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 text-xs font-bold uppercase">
+              ⚡ En Hızlı Katılım Yolu (Tek Tıkla)
+            </div>
+            <h3 className="text-xl sm:text-2xl font-black text-white">
+              Google Test Grubu&apos;muza Katılın
+            </h3>
+            <p className="text-xs sm:text-sm text-gray-300 max-w-lg mx-auto leading-relaxed">
+              Gruba katıldığınız anda Google Play Console sizi otomatik olarak testçi kabul eder ve 4 uygulamamız için erken erişim indirme bağlantısı anında açılır.
+            </p>
+            <div className="pt-2">
+              <a
+                href={STUDIO_INFO.googleGroupUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 rounded-xl bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-600 hover:from-yellow-400 hover:to-amber-500 text-black font-extrabold text-sm shadow-lg shadow-amber-500/25 hover:shadow-amber-500/40 transition-all group"
+              >
+                <Users className="w-5 h-5" />
+                <span>Google Grubu&apos;na Katıl (Testçi Ol)</span>
+                <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
+              </a>
+            </div>
+            <p className="text-[11px] font-mono text-gray-400">
+              Grup Adresi: <span className="text-amber-300">{STUDIO_INFO.googleGroupEmail}</span>
+            </p>
+          </div>
+
+          <div className="relative max-w-2xl mx-auto my-8 flex items-center justify-center">
+            <div className="border-t border-chawzer-border w-full" />
+            <span className="bg-chawzer-card px-4 text-xs text-gray-400 uppercase font-semibold whitespace-nowrap">
+              Veya E-postanızı Bırakın
+            </span>
+            <div className="border-t border-chawzer-border w-full" />
+          </div>
+
           {submitted ? (
             <div className="bg-amber-500/10 border border-amber-500/30 rounded-2xl p-8 text-center max-w-xl mx-auto space-y-4 animate-in zoom-in-95 duration-300">
               <div className="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/40 flex items-center justify-center mx-auto">
@@ -79,8 +115,16 @@ export default function TesterInviteSection({ selectedAppForBeta }: TesterInvite
               </div>
               <h3 className="text-2xl font-bold text-white">Harika! Başvurunuz Alındı</h3>
               <p className="text-sm text-gray-300 leading-relaxed">
-                <strong className="text-amber-300">{email}</strong> adresi kapalı test e-posta listesine eklendi.
-                Google Play Console üzerinden test grubuna erişim bağlantınız tanımlandığında bildirim alacaksınız.
+                <strong className="text-amber-300">{email}</strong> adresi kapalı test listesine eklendi.
+                Ayrıca hemen test etmeye başlamak için doğrudan{" "}
+                <a
+                  href={STUDIO_INFO.googleGroupUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-amber-300 underline font-bold"
+                >
+                  Google Grubu&apos;na katılabilirsiniz
+                </a>.
               </p>
               <div className="pt-2">
                 <button

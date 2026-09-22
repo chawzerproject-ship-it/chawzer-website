@@ -56,7 +56,7 @@ export default function VisionSection() {
           </h2>
 
           <p className="text-gray-300 text-base leading-relaxed">
-            <strong className="text-amber-300">Chawzer</strong>, 
+            <strong className="text-amber-300">Chawzer</strong>,
             <em>&quot;Altın Göz&quot;</em> anlamına gelir. Dijital çağda doğru bilgiye, zamana ve
             değere sahip olmak altın değerindedir. Biz mobil uygulamalarımızı işte bu bakış açısıyla
             şekillendiriyoruz.

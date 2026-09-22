@@ -66,7 +66,7 @@ export default function HomePage() {
                 {/* Brand Badge */}
                 <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/25 text-amber-300 text-xs font-semibold tracking-wider uppercase animate-fade-in shadow-lg shadow-amber-500/10">
                   <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-                  <span>Çav-Zêr • Altın Göz Mobil Stüdyosu</span>
+                  <span>Chawzer • Altın Göz Mobil Stüdyosu</span>
                 </div>
 
                 {/* Main Headline */}
@@ -80,7 +80,7 @@ export default function HomePage() {
                 {/* Subtitle */}
                 <p className="text-base sm:text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
                   <strong className="text-amber-300 font-semibold">CHAWZER</strong> ({" "}
-                  <em>Çav</em> = Göz, <em>Zêr</em> = Altın), Google Play ekosisteminde finans, siber güvenlik, yabancı dil ve yaşam tarzı alanlarında keskin vizyonla tasarlanmış yüksek performanslı mobil uygulamalar üretir.
+                  <em>Eye</em> = Göz, <em>Gold</em> = Altın), Google Play ekosisteminde finans, siber güvenlik, yabancı dil ve yaşam tarzı alanlarında keskin vizyonla tasarlanmış yüksek performanslı mobil uygulamalar üretir.
                 </p>
 
                 {/* Action Buttons */}
