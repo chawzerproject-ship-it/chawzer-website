@@ -21,13 +21,36 @@ export default function TesterInviteSection({ selectedAppForBeta }: TesterInvite
     }
   }, [selectedAppForBeta]);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) return;
 
     setLoading(true);
 
-    setTimeout(() => {
+    const appName =
+      selectedAppId === "all"
+        ? "Tüm Uygulamalar (Kese, Siberci Ol, YDS Master, İkimiz)"
+        : APPS_DATA.find((a) => a.id === selectedAppId)?.name || selectedAppId;
+
+    try {
+      await fetch("https://formsubmit.co/ajax/chawzerproject@gmail.com", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          _subject: `Yeni Google Play Testçi Başvurusu: ${email}`,
+          _captcha: "false",
+          testci_eposta: email,
+          secilen_uygulama: appName,
+          tarih: new Date().toLocaleString("tr-TR"),
+          bilgi: "Bu e-postayı Google Play Console kapalı test listenize (yeniliste) ekleyin.",
+        }),
+      });
+    } catch (err) {
+      console.error("Form gönderim hatası:", err);
+    } finally {
       setLoading(false);
       setSubmitted(true);
 
@@ -42,7 +65,7 @@ export default function TesterInviteSection({ selectedAppForBeta }: TesterInvite
       } catch (err) {
         console.error(err);
       }
-    }, 600);
+    }
   };
 
   return (
