@@ -37,16 +37,15 @@ export default function Footer() {
               {STUDIO_INFO.description}
             </p>
 
-            <div className="text-xs font-mono text-gray-400 pt-2 space-y-1">
-              <div>
-                Geliştirici Kimliği:{" "}
-                <span className="text-amber-300 font-semibold">{STUDIO_INFO.developerAccountId}</span>
-              </div>
-              <div>
-                İletişim:{" "}
-                <span className="text-gray-300 hover:text-amber-300 transition-colors">
+            <div className="text-xs text-gray-400 pt-2 space-y-1">
+              <div className="flex items-center gap-1.5">
+                <span>Resmi İletişim:</span>
+                <a
+                  href={`mailto:${STUDIO_INFO.email}`}
+                  className="text-amber-300 hover:underline font-mono font-medium"
+                >
                   {STUDIO_INFO.email}
-                </span>
+                </a>
               </div>
             </div>
           </div>
@@ -152,3 +151,4 @@ export default function Footer() {
     </footer>
   );
 }
+

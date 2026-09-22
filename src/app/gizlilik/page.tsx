@@ -35,7 +35,7 @@ export default function GeneralPrivacyPage() {
             CHAWZER Genel Gizlilik Politikası
           </h1>
           <p className="text-sm text-gray-400">
-            Son Güncelleme Tarihi: 22 Eylül 2026 • Geliştirici: CHAWZER (Hesap No: {STUDIO_INFO.developerAccountId})
+            Son Güncelleme Tarihi: 22 Eylül 2026 • Geliştirici: CHAWZER Mobile Studio
           </p>
         </div>
 
@@ -128,10 +128,9 @@ export default function GeneralPrivacyPage() {
             <p>
               KVKK (6698 Sayılı Kanun) ve GDPR kapsamında verilerinize erişme, düzeltilmesini talep etme veya tamamen silinmesini isteme hakkına sahipsiniz. Her türlü gizlilik sorusu veya veri silme talebi için:
             </p>
-            <div className="p-4 rounded-xl bg-chawzer-card border border-chawzer-border mt-2 font-mono text-xs">
+            <div className="p-4 rounded-xl bg-chawzer-card border border-chawzer-border mt-2 font-mono text-xs space-y-1">
               <p className="text-white font-bold">CHAWZER Mobile Studio</p>
-              <p className="text-amber-400">E-posta: {STUDIO_INFO.email}</p>
-              <p className="text-gray-400">Geliştirici Kimliği: {STUDIO_INFO.developerAccountId}</p>
+              <p className="text-amber-400">Resmi E-posta: {STUDIO_INFO.email}</p>
             </div>
           </section>
         </div>
@@ -141,3 +140,4 @@ export default function GeneralPrivacyPage() {
     </div>
   );
 }
+

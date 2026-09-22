@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     template: "%s | CHAWZER Studio",
   },
   description:
-    "CHAWZER (Kürtçe Altın Göz anlamına gelir), kullanıcı odaklı, yüksek güvenlikli ve modern mobil uygulamalar geliştiren bağımsız Android stüdyosu. Kese, Siberci Ol, YDS Master ve İkimiz uygulamalarını keşfedin.",
+    "CHAWZER, kullanıcı odaklı, yüksek güvenlikli ve modern mobil uygulamalar geliştiren bağımsız Android stüdyosu. Kese, Siberci Ol, YDS Master ve İkimiz uygulamalarını keşfedin.",
   keywords: [
     "Chawzer",
     "Altın Göz",
@@ -139,3 +139,4 @@ export default function RootLayout({
     </html>
   );
 }
+

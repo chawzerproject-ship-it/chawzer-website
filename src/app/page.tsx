@@ -79,7 +79,7 @@ export default function HomePage() {
 
                 {/* Subtitle */}
                 <p className="text-base sm:text-lg text-gray-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                  <strong className="text-amber-300 font-semibold">CHAWZER</strong> (Kürtçe:{" "}
+                  <strong className="text-amber-300 font-semibold">CHAWZER</strong> ({" "}
                   <em>Çav</em> = Göz, <em>Zêr</em> = Altın), Google Play ekosisteminde finans, siber güvenlik, yabancı dil ve yaşam tarzı alanlarında keskin vizyonla tasarlanmış yüksek performanslı mobil uygulamalar üretir.
                 </p>
 
@@ -173,11 +173,10 @@ export default function HomePage() {
                 <button
                   key={cat.id}
                   onClick={() => setActiveCategory(cat.id)}
-                  className={`px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all border ${
-                    activeCategory === cat.id
+                  className={`px-4 py-2 rounded-xl text-xs font-semibold whitespace-nowrap transition-all border ${activeCategory === cat.id
                       ? "bg-amber-500 text-black border-amber-400 font-bold shadow-lg shadow-amber-500/20"
                       : "bg-chawzer-card text-gray-400 border-chawzer-border hover:text-white hover:border-amber-500/30"
-                  }`}
+                    }`}
                 >
                   {cat.label}
                 </button>
@@ -216,3 +215,4 @@ export default function HomePage() {
     </div>
   );
 }
+

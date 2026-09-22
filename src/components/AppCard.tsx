@@ -142,3 +142,4 @@ export default function AppCard({ app, onOpenDetails, onJoinBeta }: AppCardProps
     </div>
   );
 }
+

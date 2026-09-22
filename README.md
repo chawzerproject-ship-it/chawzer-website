@@ -1,6 +1,6 @@
 # 👁️ CHAWZER • Altın Göz Mobil Uygulama Stüdyosu
 
-> **"Chawzer"**, Kürtçe dilinde **"Altın Göz"** (*Çav* = Göz, *Zêr* = Altın) anlamına gelmektedir.  
+> **"Chawzer"**,  **""** (*Çav* = Göz, *Zêr* = Altın) anlamına gelmektedir.  
 > Bu web sitesi, Google Play ekosisteminde geliştirdiğiniz mobil uygulamalarınızı vitrine çıkaran, Google Play kapalı test (20 testçi) sürecini destekleyen ve **her uygulama için Play Store zorunlu Gizlilik Politikalarını** barındıran süper dinamik bir platformdur.
 
 ---
@@ -92,3 +92,4 @@ Siteniz Vercel'de yayınlandıktan sonra (örneğin `https://chawzer.vercel.app`
    adreslerini yapıştırıp **Kaydet** butonuna basın.
 
 Bu sayede Google inceleme ekibi doğrudan Gizlilik Politikanızı onaylayacak ve kapalı test süreciniz hızla tamamlanacaktır.
+

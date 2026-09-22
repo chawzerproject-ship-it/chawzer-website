@@ -159,12 +159,11 @@ export default async function AppPrivacyPage({ params }: { params: Promise<{ app
               Bu politika hakkında her türlü soru, öneri veya teknik destek talebiniz için resmi stüdyo kanalımız:
             </p>
             <div className="p-4 rounded-xl bg-chawzer-card border border-chawzer-border text-xs space-y-1">
-              <p className="text-white font-bold">CHAWZER Studio</p>
+              <p className="text-white font-bold">CHAWZER Mobile Studio</p>
               <p className="text-amber-400 flex items-center gap-1.5">
                 <Mail className="w-3.5 h-3.5" />
-                <span>E-posta: {STUDIO_INFO.email}</span>
+                <span>Resmi Destek E-postası: {STUDIO_INFO.email}</span>
               </p>
-              <p className="text-gray-400">Google Play Hesap ID: {STUDIO_INFO.developerAccountId}</p>
             </div>
           </section>
         </div>
@@ -174,3 +173,4 @@ export default async function AppPrivacyPage({ params }: { params: Promise<{ app
     </div>
   );
 }
+

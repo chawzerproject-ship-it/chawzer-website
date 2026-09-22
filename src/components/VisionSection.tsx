@@ -10,7 +10,7 @@ export default function VisionSection() {
     {
       icon: Eye,
       title: "Altın Göz (Chawzer) Felsefesi",
-      subtitle: "Kürtçe 'Çav' (Göz) ve 'Zêr' (Altın)",
+      subtitle: "",
       description:
         "Mobil dünyada yüzbinlerce uygulama varken, CHAWZER karmaşayı filtreleyip yalnızca gerçek değer üreten, pürüzsüz ve vizyoner deneyimler inşa eder.",
     },
@@ -56,7 +56,7 @@ export default function VisionSection() {
           </h2>
 
           <p className="text-gray-300 text-base leading-relaxed">
-            <strong className="text-amber-300">Chawzer</strong>, Kürtçe dilinde{" "}
+            <strong className="text-amber-300">Chawzer</strong>, 
             <em>&quot;Altın Göz&quot;</em> anlamına gelir. Dijital çağda doğru bilgiye, zamana ve
             değere sahip olmak altın değerindedir. Biz mobil uygulamalarımızı işte bu bakış açısıyla
             şekillendiriyoruz.
@@ -103,11 +103,11 @@ export default function VisionSection() {
             </div>
             <div>
               <div className="flex items-center gap-2">
-                <h4 className="text-lg font-bold text-white">Google Play Geliştirici Hesabı</h4>
+                <h4 className="text-lg font-bold text-white">Google Play Geliştirici Stüdyosu</h4>
                 <Award className="w-4 h-4 text-amber-400" />
               </div>
-              <p className="text-xs text-gray-400 font-mono mt-0.5">
-                Geliştirici Kimliği: <span className="text-amber-300 font-bold">{STUDIO_INFO.developerAccountId}</span>
+              <p className="text-xs text-amber-300 font-medium mt-0.5">
+                Onaylı Android Geliştiricisi • CHAWZER Studio
               </p>
             </div>
           </div>
@@ -131,3 +131,4 @@ export default function VisionSection() {
     </section>
   );
 }
+

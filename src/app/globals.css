@@ -63,7 +63,7 @@
 /* Cyber grid background */
 .cyber-grid {
   background-size: 40px 40px;
-  background-image: 
+  background-image:
     linear-gradient(to right, rgba(255, 200, 55, 0.03) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 200, 55, 0.03) 1px, transparent 1px);
 }
