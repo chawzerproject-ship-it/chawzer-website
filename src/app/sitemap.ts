@@ -2,7 +2,7 @@ import { MetadataRoute } from "next";
 import { APPS_DATA } from "@/data/apps";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://chawzer.vercel.app";
+  const baseUrl = "https://chawzer-website.vercel.app";
 
   const staticRoutes: MetadataRoute.Sitemap = [
     {

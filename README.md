@@ -9,6 +9,7 @@
 
 | Uygulama | Paket Adı (Package Name) | Kategori | Durum | Gizlilik Politikası URL |
 | :--- | :--- | :--- | :--- | :--- |
+| **KPSS Master 2026** | `com.chawzer.kpssmaster` | Eğitim & Sınav Hazırlık | Kapalı Test | `/gizlilik/kpss-master` |
 | **Kese** | `com.chawzer.kese` | Finans & Bütçe | Kapalı Test | `/gizlilik/kese` |
 | **Siberci Ol** | `com.chawzer.cyber` | Siber Güvenlik & Eğitim | Kapalı Test | `/gizlilik/siberci-ol` |
 | **YDS Master** | `com.chawzer.ydsmaster` | YDS & YÖKDİL Sınav | Kapalı Test | `/gizlilik/yds-master` |
@@ -80,15 +81,16 @@ Vercel, Next.js projelerini **ömür boyu ücretsiz (Hobby Plan)** olarak barın
 
 ## 📋 Google Play Console'a Gizlilik Linklerini Ekleme
 
-Siteniz Vercel'de yayınlandıktan sonra (örneğin `https://chawzer.vercel.app`):
+Siteniz Vercel'de yayınlandıktan sonra (örneğin `https://chawzer-website.vercel.app`):
 1. **Google Play Console**'a giriş yapın.
-2. Uygulamanızı seçin (Örn: **Kese**).
+2. Uygulamanızı seçin (Örn: **KPSS Master 2026**).
 3. Sol menüden en alttaki **Politika ve programlar > Uygulama içeriği** (App Content) bölümüne gidin.
 4. **Gizlilik Politikası (Privacy Policy)** alanına:
-   - Kese için: `https://chawzer.vercel.app/gizlilik/kese`
-   - Siberci Ol için: `https://chawzer.vercel.app/gizlilik/siberci-ol`
-   - YDS Master için: `https://chawzer.vercel.app/gizlilik/yds-master`
-   - İkimiz için: `https://chawzer.vercel.app/gizlilik/ikimiz`
+   - KPSS Master için: `https://chawzer-website.vercel.app/gizlilik/kpss-master`
+   - Kese için: `https://chawzer-website.vercel.app/gizlilik/kese`
+   - Siberci Ol için: `https://chawzer-website.vercel.app/gizlilik/siberci-ol`
+   - YDS Master için: `https://chawzer-website.vercel.app/gizlilik/yds-master`
+   - İkimiz için: `https://chawzer-website.vercel.app/gizlilik/ikimiz`
    adreslerini yapıştırıp **Kaydet** butonuna basın.
 
 Bu sayede Google inceleme ekibi doğrudan Gizlilik Politikanızı onaylayacak ve kapalı test süreciniz hızla tamamlanacaktır.

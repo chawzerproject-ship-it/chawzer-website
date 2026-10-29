@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { APPS_DATA, STUDIO_INFO } from "@/data/apps";
 
-const siteUrl = "https://chawzer.vercel.app";
+const siteUrl = "https://chawzer-website.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
