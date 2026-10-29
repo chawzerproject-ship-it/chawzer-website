@@ -157,6 +157,42 @@ export const APPS_DATA: AppItem[] = [
       { label: "Gizlilik", value: "Biyometrik Kilit" },
       { label: "Anı Kapasitesi", value: "Sınırsız" }
     ]
+  },
+  {
+    id: "kpss",
+    slug: "kpss-master",
+    name: "KPSS Master 2026: Sınav Hazırlık & Soru Bankası",
+    packageName: "com.chawzer.kpssmaster",
+    category: "Eğitim & Sınav Hazırlık",
+    version: "v1.0.0",
+    status: "Kapalı Test",
+    tagline: "Hedef 90+ Puan. Akıllı soru bankası, 120 soruluk denemeler ve hafıza kartları.",
+    description: "KPSS Lisans, Ön Lisans ve Ortaöğretim adayları için 120 soruluk özgün denemeler, aralıklı tekrar hafıza kartları, harita notları ve puan hesaplayıcı.",
+    fullDescription: "KPSS Master 2026, Kamu Personeli Seçme Sınavı'na hazırlanan adaylar için tasarlanmış kapsamlı ve modern bir çalışma istasyonudur. ÖSYM formatında 120 soruluk Genel Yetenek - Genel Kültür deneme sınavları, konu bazlı soru testleri, Tarih, Coğrafya ve Vatandaşlık görsel hafıza kartları, interaktif harita çalışma modülü, yanlış yapılan soruları toplayan akıllı Hata Defteri ve Pomodoro odaklanma sayacı ile sınav maratonunda en büyük yardımcınızdır.",
+    icon: "/apps/kpss.png",
+    gradient: "from-sky-500/20 via-blue-500/10 to-transparent",
+    accentColor: "#0284C7",
+    borderColor: "group-hover:border-sky-500/50",
+    features: [
+      "120 soruluk tam kapsamlı GY-GK deneme simülasyonu",
+      "Görsel Tarih, Coğrafya ve Vatandaşlık hafıza kartları",
+      "İnteraktif Türkiye Haritası üzerinde coğrafi notlar ve soru çözümü",
+      "Otomatik Hata Defteri: Yanlış yaptığınız soruları pekiştirin",
+      "ÖSYM katsayılarıyla uyumlu KPSS Lisans, Ön Lisans ve Ortaöğretim puan hesaplama"
+    ],
+    testersCount: 12,
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.chawzer.kpssmaster",
+    targetAudience: "KPSS Lisans, Ön Lisans ve Ortaöğretim sınavlarına hazırlanan tüm adaylar",
+    privacySummary: "Test sonuçlarınız, harita notlarınız ve çalışma istatistikleriniz yalnızca cihazınızın yerel depolama alanında saklanır. Hiçbir kişisel veri toplanmaz veya harici sunuculara aktarılmaz.",
+    permissions: [
+      "İnternet Erişimi (android.permission.INTERNET - yazı tipleri ve sistem güncellemeleri için)",
+      "Ağ Durumu Kontrolü (android.permission.ACCESS_NETWORK_STATE - bağlantı kontrolü için)"
+    ],
+    stats: [
+      { label: "Özgün Soru", value: "1000+" },
+      { label: "Hafıza Kartı", value: "250+" },
+      { label: "Veri Güvenliği", value: "%100 Yerel" }
+    ]
   }
 ];
 
@@ -170,7 +206,7 @@ export const STUDIO_INFO = {
   googleGroupEmail: "chawzer-test-ekibi@googlegroups.com",
   googleGroupUrl: "https://groups.google.com/g/chawzer-test-ekibi",
   playStoreConsoleUrl: "https://play.google.com/store/apps/developer?id=CHAWZER",
-  totalApps: 4,
+  totalApps: 5,
   location: "Türkiye",
   foundationYear: "2026"
 };

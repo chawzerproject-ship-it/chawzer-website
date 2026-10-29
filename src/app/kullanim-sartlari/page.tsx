@@ -6,8 +6,9 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Kullanım Şartları - CHAWZER Mobile Studio",
-  description: "CHAWZER stüdyosu mobil uygulamaları ve dijital servisleri genel kullanım şartları ve yasal sözleşmesi.",
+  title: "Kullanım Şartları",
+  description: "CHAWZER mobil uygulamalarının ve dijital hizmetlerinin genel kullanım şartları.",
+  alternates: { canonical: "/kullanim-sartlari" },
 };
 
 export default function TermsPage() {
@@ -80,4 +81,3 @@ export default function TermsPage() {
     </div>
   );
 }
-

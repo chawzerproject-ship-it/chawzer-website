@@ -2,32 +2,26 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { APPS_DATA, STUDIO_INFO } from "@/data/apps";
 
+const siteUrl = "https://chawzer.vercel.app";
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://chawzer.vercel.app"),
+  metadataBase: new URL(siteUrl),
   title: {
-    default: "CHAWZER • Altın Göz Mobil Uygulama Stüdyosu | Google Play",
-    template: "%s | CHAWZER Studio",
+    default: "CHAWZER | Mobil Uygulama Stüdyosu",
+    template: "%s | CHAWZER",
   },
   description:
-    "CHAWZER, kullanıcı odaklı, yüksek güvenlikli ve modern mobil uygulamalar geliştiren bağımsız Android stüdyosu. Kese, Siberci Ol, YDS Master ve İkimiz uygulamalarını keşfedin.",
+    "CHAWZER; KPSS Master sınav hazırlık, Kese bütçe, Siberci Ol siber güvenlik, YDS Master ve İkimiz çift uygulamalarını geliştiren bağımsız bir mobil uygulama stüdyosudur.",
+  applicationName: "CHAWZER",
+  category: "technology",
   keywords: [
-    "Chawzer",
-    "Altın Göz",
-    "Mobil Uygulama",
-    "Google Play",
-    "Android Geliştirici",
-    "Kese Bütçe",
-    "Siberci Ol",
-    "Siber Güvenlik Eğitimi",
-    "YDS Master",
-    "YÖKDİL Hazırlık",
-    "İkimiz Çift Uygulaması",
-    "Kapalı Test",
-    "Google Play Console",
+    "CHAWZER", "Chawzer mobil uygulamalar", "Android uygulama geliştirici",
+    "KPSS Master 2026", "KPSS soru bankası", "Kese bütçe uygulaması", "Siberci Ol", "YDS Master", "İkimiz uygulaması",
   ],
-  authors: [{ name: "CHAWZER", url: "https://chawzer.vercel.app" }],
-  creator: "CHAWZER Studio",
-  publisher: "CHAWZER Studio",
+  authors: [{ name: "CHAWZER", url: siteUrl }],
+  creator: "CHAWZER",
+  publisher: "CHAWZER",
+  alternates: { canonical: "/" },
   robots: {
     index: true,
     follow: true,
@@ -42,85 +36,57 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "tr_TR",
-    url: "https://chawzer.vercel.app",
-    title: "CHAWZER • Altın Göz Mobil Uygulama Stüdyosu",
+    url: siteUrl,
+    title: "CHAWZER | Mobil Uygulama Stüdyosu",
     description:
-      "Mobil dünyada keskin bir bakış ve üstün kullanıcı deneyimi. Kese, Siberci Ol, YDS Master ve İkimiz uygulamalarını keşfedin.",
-    siteName: "CHAWZER Studio",
-    images: [
-      {
-        url: "/brand/chawzer-eye.png",
-        width: 512,
-        height: 512,
-        alt: "CHAWZER Altın Göz Amblemi",
-      },
-    ],
+      "CHAWZER tarafından geliştirilen Android uygulamalarını keşfedin: KPSS Master 2026, Kese, Siberci Ol, YDS Master ve İkimiz.",
+    siteName: "CHAWZER",
+    images: [{ url: "/brand/chawzer-eye.png", width: 512, height: 512, alt: "CHAWZER Altın Göz logosu" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "CHAWZER • Altın Göz Mobil Uygulama Stüdyosu",
-    description: "Mobil dünyada keskin bir bakış ve üstün kullanıcı deneyimi.",
+    title: "CHAWZER | Mobil Uygulama Stüdyosu",
+    description: "CHAWZER tarafından geliştirilen Android uygulamalarını keşfedin.",
     images: ["/brand/chawzer-eye.png"],
   },
   icons: {
-    icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/icon.png", type: "image/png", sizes: "512x512" },
-    ],
+    icon: [{ url: "/favicon.ico", sizes: "any" }, { url: "/icon.png", type: "image/png", sizes: "512x512" }],
     apple: [{ url: "/icon.png", sizes: "180x180", type: "image/png" }],
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  // Rich JSON-LD Structured Data Schema for Google SEO
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
       {
         "@type": "Organization",
-        "@id": "https://chawzer.vercel.app/#organization",
+        "@id": `${siteUrl}/#organization`,
         name: "CHAWZER",
-        alternateName: "Altın Göz Mobile Studio",
-        url: "https://chawzer.vercel.app",
-        logo: "https://chawzer.vercel.app/brand/chawzer-eye.png",
-        sameAs: [
-          STUDIO_INFO.playStoreConsoleUrl,
-        ],
-        contactPoint: {
-          "@type": "ContactPoint",
-          email: STUDIO_INFO.email,
-          contactType: "customer support",
-        },
+        alternateName: "CHAWZER Mobil Uygulama Stüdyosu",
+        url: siteUrl,
+        logo: `${siteUrl}/brand/chawzer-eye.png`,
+        email: STUDIO_INFO.email,
+        sameAs: [STUDIO_INFO.playStoreConsoleUrl],
       },
       {
         "@type": "WebSite",
-        "@id": "https://chawzer.vercel.app/#website",
-        url: "https://chawzer.vercel.app",
-        name: "CHAWZER Studio",
-        publisher: {
-          "@id": "https://chawzer.vercel.app/#organization",
-        },
+        "@id": `${siteUrl}/#website`,
+        url: siteUrl,
+        name: "CHAWZER",
+        description: metadata.description,
+        publisher: { "@id": `${siteUrl}/#organization` },
         inLanguage: "tr-TR",
       },
       ...APPS_DATA.map((app) => ({
         "@type": "SoftwareApplication",
         name: app.name,
-        operatingSystem: "ANDROID",
+        operatingSystem: "Android",
         applicationCategory: app.category,
-        offers: {
-          "@type": "Offer",
-          price: "0",
-          priceCurrency: "TRY",
-        },
         description: app.description,
         softwareVersion: app.version,
-        publisher: {
-          "@id": "https://chawzer.vercel.app/#organization",
-        },
+        url: app.playStoreUrl,
+        publisher: { "@id": `${siteUrl}/#organization` },
       })),
     ],
   };
@@ -130,7 +96,7 @@ export default function RootLayout({
       <head>
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
         />
       </head>
       <body className="bg-chawzer-bg text-gray-100 antialiased selection:bg-amber-500 selection:text-black">
@@ -139,4 +105,3 @@ export default function RootLayout({
     </html>
   );
 }
-

@@ -6,8 +6,9 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const metadata = {
-  title: "Gizlilik Politikaları - CHAWZER Mobile Studio",
-  description: "CHAWZER stüdyosu ve Google Play mağazasındaki Kese, Siberci Ol, YDS Master, İkimiz mobil uygulamalarının resmi gizlilik politikaları ve veri güvenliği ilkeleri.",
+  title: "Gizlilik Politikaları",
+  description: "CHAWZER stüdyosu ve Google Play mağazasındaki KPSS Master, Kese, Siberci Ol, YDS Master, İkimiz mobil uygulamalarının resmi gizlilik politikaları ve veri güvenliği ilkeleri.",
+  alternates: { canonical: "/gizlilik" },
 };
 
 export default function GeneralPrivacyPage() {
@@ -35,7 +36,7 @@ export default function GeneralPrivacyPage() {
             CHAWZER Genel Gizlilik Politikası
           </h1>
           <p className="text-sm text-gray-400">
-            Son Güncelleme Tarihi: 22 Eylül 2026 • Geliştirici: CHAWZER Mobile Studio
+            Son Güncelleme Tarihi: 29 Ekim 2026 • Geliştirici: CHAWZER Mobile Studio
           </p>
         </div>
 
@@ -140,4 +141,3 @@ export default function GeneralPrivacyPage() {
     </div>
   );
 }
-

@@ -173,11 +173,11 @@ export default function TesterInviteSection({ selectedAppForBeta }: TesterInvite
                     type="button"
                     onClick={() => setSelectedAppId("all")}
                     className={`py-2 px-3 rounded-xl text-xs font-semibold transition-all border ${selectedAppId === "all"
-                        ? "bg-amber-500 text-black border-amber-400 shadow-md shadow-amber-500/20"
-                        : "bg-chawzer-surface/80 text-gray-300 border-chawzer-border hover:border-amber-500/40"
+                      ? "bg-amber-500 text-black border-amber-400 shadow-md shadow-amber-500/20"
+                      : "bg-chawzer-surface/80 text-gray-300 border-chawzer-border hover:border-amber-500/40"
                       }`}
                   >
-                    Tümü (4 Uygulama)
+                    Tümü ({APPS_DATA.length} Uygulama)
                   </button>
                   {APPS_DATA.map((app) => (
                     <button
@@ -185,8 +185,8 @@ export default function TesterInviteSection({ selectedAppForBeta }: TesterInvite
                       type="button"
                       onClick={() => setSelectedAppId(app.id)}
                       className={`py-2 px-3 rounded-xl text-xs font-semibold transition-all border truncate ${selectedAppId === app.id
-                          ? "bg-amber-500 text-black border-amber-400 shadow-md shadow-amber-500/20"
-                          : "bg-chawzer-surface/80 text-gray-300 border-chawzer-border hover:border-amber-500/40"
+                        ? "bg-amber-500 text-black border-amber-400 shadow-md shadow-amber-500/20"
+                        : "bg-chawzer-surface/80 text-gray-300 border-chawzer-border hover:border-amber-500/40"
                         }`}
                     >
                       {app.name.split(":")[0]}

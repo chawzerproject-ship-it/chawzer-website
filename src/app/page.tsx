@@ -29,10 +29,10 @@ export default function HomePage() {
   const [betaTargetApp, setBetaTargetApp] = useState<AppItem | null>(null);
 
   const categories = [
-    { id: "all", label: "Tüm Uygulamalar (4)" },
+    { id: "all", label: `Tüm Uygulamalar (${APPS_DATA.length})` },
     { id: "Finans & Üretkenlik", label: "Finans" },
     { id: "Eğitim & Teknoloji", label: "Siber Güvenlik" },
-    { id: "Eğitim & Sınav Hazırlık", label: "Sınav & YDS" },
+    { id: "Eğitim & Sınav Hazırlık", label: "KPSS & Sınavlar" },
     { id: "Yaşam Tarzı & Sosyal", label: "Sosyal & Çift" },
   ];
 
