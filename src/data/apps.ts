@@ -193,6 +193,42 @@ export const APPS_DATA: AppItem[] = [
       { label: "Hafıza Kartı", value: "250+" },
       { label: "Veri Güvenliği", value: "%100 Yerel" }
     ]
+  },
+  {
+    id: "yks",
+    slug: "yks-2027",
+    name: "YKS 2027 Koçum & Soru Bankası",
+    packageName: "com.chawzer.yks",
+    category: "Eğitim & Sınav Hazırlık",
+    version: "v1.0.0",
+    status: "Kapalı Test",
+    tagline: "Hedef İlk 1000. TYT & AYT soru bankası, akıllı sınav koçu ve hata defteri.",
+    description: "YKS 2027 sınavına hazırlanan adaylar için özgün TYT & AYT soruları, aralıklı tekrar kartları, yapay zeka destekli sınav koçu ve offline çalışma desteği.",
+    fullDescription: "YKS 2027 Koçum & Soru Bankası, üniversite sınavına hazırlanan lise ve mezun öğrenciler için tasarlanmış yeni nesil dijital hazırlık platformudur. Müfredata %100 uyumlu özgün soru havuzu, offline çalışabilen soru çözümü, hata defteri, akıllı koçluk ve aralıklı tekrar algoritmalarıyla başarıya ulaştırır.",
+    icon: "/apps/yks.png",
+    gradient: "from-indigo-500/20 via-purple-500/10 to-transparent",
+    accentColor: "#6366F1",
+    borderColor: "group-hover:border-indigo-500/50",
+    features: [
+      "Özgün 2027 TYT ve AYT soru havuzu ve detaylı çözümler",
+      "İnternetsiz (Offline-first) yerel depolama ile soru çözümü",
+      "Kişiselleştirilmiş hedef puan ve alan (Sayısal, EA, Sözel) takibi",
+      "Akıllı Hata Defteri ve Aralıklı Tekrar (Leitner) sistemi",
+      "Pomodoro odaklanma zamanlayıcısı ve çalışma serisi (streak)"
+    ],
+    testersCount: 15,
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.chawzer.yks",
+    targetAudience: "YKS 2027 (TYT-AYT) sınavına hazırlanan lise öğrencileri ve mezun adaylar",
+    privacySummary: "Çalışma verileriniz, çözdüğünüz sorular ve hata analizleriniz cihazınızda güvenle saklanır. Kişisel veriler asla üçüncü taraflarla paylaşılmaz veya satılmaz.",
+    permissions: [
+      "Yerel Depolama (SQLite / MMKV - çevrimdışı soru çözümü ve çizimler için)",
+      "Bildirim İzni (android.permission.POST_NOTIFICATIONS - günlük çalışma hatırlatıcıları için)"
+    ],
+    stats: [
+      { label: "Hedef Sınav", value: "YKS 2027" },
+      { label: "Soru Modülü", value: "TYT / AYT" },
+      { label: "Veri Güvenliği", value: "KVKK & GDPR" }
+    ]
   }
 ];
 
@@ -206,7 +242,7 @@ export const STUDIO_INFO = {
   googleGroupEmail: "chawzer-test-ekibi@googlegroups.com",
   googleGroupUrl: "https://groups.google.com/g/chawzer-test-ekibi",
   playStoreConsoleUrl: "https://play.google.com/store/apps/developer?id=CHAWZER",
-  totalApps: 5,
+  totalApps: 6,
   location: "Türkiye",
   foundationYear: "2026"
 };

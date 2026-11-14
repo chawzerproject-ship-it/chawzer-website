@@ -11,11 +11,12 @@ export const metadata: Metadata = {
     template: "%s | CHAWZER",
   },
   description:
-    "CHAWZER; KPSS Master sınav hazırlık, Kese bütçe, Siberci Ol siber güvenlik, YDS Master ve İkimiz çift uygulamalarını geliştiren bağımsız bir mobil uygulama stüdyosudur.",
+    "CHAWZER; YKS 2027 Koçum sınav hazırlık, KPSS Master, Kese bütçe, Siberci Ol siber güvenlik, YDS Master ve İkimiz çift uygulamalarını geliştiren bağımsız bir mobil uygulama stüdyosudur.",
   applicationName: "CHAWZER",
   category: "technology",
   keywords: [
     "CHAWZER", "Chawzer mobil uygulamalar", "Android uygulama geliştirici",
+    "YKS 2027 Koçum", "YKS soru bankası", "TYT AYT hazırlık",
     "KPSS Master 2026", "KPSS soru bankası", "Kese bütçe uygulaması", "Siberci Ol", "YDS Master", "İkimiz uygulaması",
   ],
   authors: [{ name: "CHAWZER", url: siteUrl }],
@@ -39,7 +40,7 @@ export const metadata: Metadata = {
     url: siteUrl,
     title: "CHAWZER | Mobil Uygulama Stüdyosu",
     description:
-      "CHAWZER tarafından geliştirilen Android uygulamalarını keşfedin: KPSS Master 2026, Kese, Siberci Ol, YDS Master ve İkimiz.",
+      "CHAWZER tarafından geliştirilen Android uygulamalarını keşfedin: YKS 2027 Koçum, KPSS Master 2026, Kese, Siberci Ol, YDS Master ve İkimiz.",
     siteName: "CHAWZER",
     images: [{ url: "/brand/chawzer-eye.png", width: 512, height: 512, alt: "CHAWZER Altın Göz logosu" }],
   },

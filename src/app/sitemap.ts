@@ -28,5 +28,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.9,
   }));
 
-  return [...staticRoutes, ...appRoutes];
+  const aliasRoutes: MetadataRoute.Sitemap = [
+    {
+      url: `${baseUrl}/gizlilik/kpss`,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/gizlilik/yks`,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+  ];
+
+  return [...staticRoutes, ...appRoutes, ...aliasRoutes];
 }

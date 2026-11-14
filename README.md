@@ -9,6 +9,7 @@
 
 | Uygulama | Paket Adı (Package Name) | Kategori | Durum | Gizlilik Politikası URL |
 | :--- | :--- | :--- | :--- | :--- |
+| **YKS 2027 Koçum** | `com.chawzer.yks` | Eğitim & Sınav Hazırlık | Kapalı Test | `/gizlilik/yks-2027` |
 | **KPSS Master 2026** | `com.chawzer.kpssmaster` | Eğitim & Sınav Hazırlık | Kapalı Test | `/gizlilik/kpss-master` |
 | **Kese** | `com.chawzer.kese` | Finans & Bütçe | Kapalı Test | `/gizlilik/kese` |
 | **Siberci Ol** | `com.chawzer.cyber` | Siber Güvenlik & Eğitim | Kapalı Test | `/gizlilik/siberci-ol` |
@@ -86,6 +87,7 @@ Siteniz Vercel'de yayınlandıktan sonra (örneğin `https://chawzer-website.ver
 2. Uygulamanızı seçin (Örn: **KPSS Master 2026**).
 3. Sol menüden en alttaki **Politika ve programlar > Uygulama içeriği** (App Content) bölümüne gidin.
 4. **Gizlilik Politikası (Privacy Policy)** alanına:
+   - YKS 2027 Koçum için: `https://chawzer-website.vercel.app/gizlilik/yks-2027` (veya doğrudan `https://chawzer-website.vercel.app/gizlilik/yks` ya da `https://chawzer-website.vercel.app/gizlilik-yks.html`)
    - KPSS Master için: `https://chawzer-website.vercel.app/gizlilik/kpss-master`
    - Kese için: `https://chawzer-website.vercel.app/gizlilik/kese`
    - Siberci Ol için: `https://chawzer-website.vercel.app/gizlilik/siberci-ol`
