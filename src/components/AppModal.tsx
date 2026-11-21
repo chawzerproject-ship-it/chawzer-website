@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { X, Check, Shield, Download, ExternalLink, Sparkles, Smartphone, Copy, CheckCheck } from "lucide-react";
 import { AppItem } from "@/data/apps";
+import GooglePlayIcon from "@/components/GooglePlayIcon";
 
 interface AppModalProps {
   app: AppItem | null;
@@ -55,7 +56,13 @@ export default function AppModal({ app, onClose, onJoinBeta }: AppModalProps) {
               <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-amber-500/10 text-amber-300 border border-amber-500/25">
                 {app.category}
               </span>
-              <span className="text-xs font-semibold px-2.5 py-0.5 rounded-full bg-blue-500/10 text-blue-300 border border-blue-500/20">
+              <span className={`text-xs font-semibold px-2.5 py-0.5 rounded-full border ${
+                app.status === "Yayında"
+                  ? "bg-emerald-500/10 text-emerald-300 border-emerald-500/20"
+                  : app.status === "Taslak"
+                    ? "bg-gray-500/10 text-gray-300 border-gray-500/20"
+                    : "bg-blue-500/10 text-blue-300 border-blue-500/20"
+              }`}>
                 {app.status}
               </span>
               <span className="text-xs font-mono px-2 py-0.5 rounded-md bg-white/5 text-gray-400">
@@ -148,16 +155,33 @@ export default function AppModal({ app, onClose, onJoinBeta }: AppModalProps) {
 
         {/* Modal Actions */}
         <div className="flex flex-col sm:flex-row items-center gap-3 pt-4 border-t border-chawzer-border">
-          <button
-            onClick={() => {
-              onClose();
-              onJoinBeta(app);
-            }}
-            className="w-full sm:flex-1 py-3 px-5 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-yellow-400 hover:to-amber-500 text-black font-bold text-sm shadow-lg shadow-amber-500/20 flex items-center justify-center gap-2 transition-all"
-          >
-            <Download className="w-4 h-4" />
-            <span>Kapalı Teste Katıl (20 Testçi Grubu)</span>
-          </button>
+          {app.status === "Yayında" ? (
+            <a
+              href={app.playStoreUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={onClose}
+              className="w-full sm:flex-1 py-3 px-5 rounded-xl bg-gradient-to-r from-emerald-500 to-green-500 hover:from-green-400 hover:to-emerald-500 text-black font-bold text-sm shadow-lg shadow-emerald-500/20 flex items-center justify-center gap-2 transition-all"
+            >
+              <GooglePlayIcon className="w-5 h-5" />
+              <span>Google Play&apos;de indir</span>
+            </a>
+          ) : app.status !== "Taslak" ? (
+            <button
+              onClick={() => {
+                onClose();
+                onJoinBeta(app);
+              }}
+              className="w-full sm:flex-1 py-3 px-5 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-500 hover:from-yellow-400 hover:to-amber-500 text-black font-bold text-sm shadow-lg shadow-amber-500/20 flex items-center justify-center gap-2 transition-all"
+            >
+              <Download className="w-4 h-4" />
+              <span>Kapalı Teste Katıl (20 Testçi Grubu)</span>
+            </button>
+          ) : (
+            <p className="w-full sm:flex-1 text-center text-sm text-gray-400">
+              Uygulama Google Play&apos;de yayınlanmaya hazırlanıyor.
+            </p>
+          )}
 
           <Link
             href={`/gizlilik/${app.slug}`}
@@ -172,4 +196,3 @@ export default function AppModal({ app, onClose, onJoinBeta }: AppModalProps) {
     </div>
   );
 }
-

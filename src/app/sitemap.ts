@@ -39,6 +39,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.9,
     },
+    {
+      url: `${baseUrl}/gizlilik/ags`,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/gizlilik/vampir-koylu`,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
   ];
 
   return [...staticRoutes, ...appRoutes, ...aliasRoutes];

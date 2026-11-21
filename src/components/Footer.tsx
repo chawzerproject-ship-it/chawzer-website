@@ -97,6 +97,11 @@ export default function Footer() {
                   İkimiz Gizlilik Politikası
                 </Link>
               </li>
+              <li>
+                <Link href="/gizlilik/vampir-kurtadam" className="hover:text-amber-300 transition-colors block">
+                  Fangfall Gizlilik Politikası
+                </Link>
+              </li>
               <li className="pt-1">
                 <Link href="/gizlilik" className="text-amber-400 hover:text-amber-300 font-semibold block">
                   Genel Gizlilik İlkeleri →
@@ -151,4 +156,3 @@ export default function Footer() {
     </footer>
   );
 }
-

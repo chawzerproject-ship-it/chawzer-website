@@ -11,11 +11,12 @@ export const metadata: Metadata = {
     template: "%s | CHAWZER",
   },
   description:
-    "CHAWZER; YKS 2027 Koçum sınav hazırlık, KPSS Master, Kese bütçe, Siberci Ol siber güvenlik, YDS Master ve İkimiz çift uygulamalarını geliştiren bağımsız bir mobil uygulama stüdyosudur.",
+    "CHAWZER; AGS 2027 Akademi Giriş Sınavı, YKS 2027 Koçum sınav hazırlık, KPSS Master, Kese bütçe, Siberci Ol siber güvenlik, YDS Master, İkimiz çift ve Fangfall parti oyunlarını geliştiren bağımsız bir mobil uygulama stüdyosudur.",
   applicationName: "CHAWZER",
   category: "technology",
   keywords: [
     "CHAWZER", "Chawzer mobil uygulamalar", "Android uygulama geliştirici",
+    "AGS 2027", "Akademi Giriş Sınavı", "AGS soru bankası", "ÖABT hazırlık",
     "YKS 2027 Koçum", "YKS soru bankası", "TYT AYT hazırlık",
     "KPSS Master 2026", "KPSS soru bankası", "Kese bütçe uygulaması", "Siberci Ol", "YDS Master", "İkimiz uygulaması",
   ],

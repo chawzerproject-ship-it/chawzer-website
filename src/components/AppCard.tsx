@@ -3,8 +3,9 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Copy, CheckCheck, Shield, ChevronRight, Sparkles, Smartphone, Play } from "lucide-react";
+import { Copy, CheckCheck, Shield, ChevronRight, Smartphone } from "lucide-react";
 import { AppItem } from "@/data/apps";
+import GooglePlayIcon from "@/components/GooglePlayIcon";
 
 interface AppCardProps {
   app: AppItem;
@@ -46,8 +47,18 @@ export default function AppCard({ app, onOpenDetails, onJoinBeta }: AppCardProps
 
           {/* Badges */}
           <div className="flex flex-col items-end gap-1.5">
-            <span className="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-blue-500/10 text-blue-300 border border-blue-500/20 flex items-center gap-1">
-              <span className="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse" />
+            <span className={`text-[11px] font-semibold px-2.5 py-0.5 rounded-full border flex items-center gap-1 ${
+              app.status === "Yayında"
+                ? "bg-emerald-500/10 text-emerald-300 border-emerald-500/20"
+                : app.status === "Taslak"
+                  ? "bg-gray-500/10 text-gray-300 border-gray-500/20"
+                  : "bg-blue-500/10 text-blue-300 border-blue-500/20"
+            }`}>
+              {app.status !== "Taslak" && (
+                <span className={`w-1.5 h-1.5 rounded-full animate-pulse ${
+                  app.status === "Yayında" ? "bg-emerald-400" : "bg-blue-400"
+                }`} />
+              )}
               {app.status}
             </span>
             <span className="text-[10px] font-mono px-2 py-0.5 rounded-md bg-white/5 text-gray-400 border border-white/5">
@@ -126,20 +137,35 @@ export default function AppCard({ app, onOpenDetails, onJoinBeta }: AppCardProps
             <Shield className="w-3.5 h-3.5" />
           </Link>
 
-          <button
-            type="button"
-            onClick={(e) => {
-              e.stopPropagation();
-              onJoinBeta(app);
-            }}
-            className="px-3.5 py-1.5 rounded-lg bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 hover:text-amber-200 border border-amber-500/30 text-xs font-bold transition-all flex items-center gap-1.5"
-          >
-            <Play className="w-3 h-3 fill-amber-400 text-amber-400" />
-            <span>Testçi Ol</span>
-          </button>
+          {app.status === "Yayında" ? (
+            <a
+              href={app.playStoreUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="px-3.5 py-1.5 rounded-lg bg-emerald-500/10 hover:bg-emerald-500/20 text-emerald-300 hover:text-emerald-200 border border-emerald-500/30 text-xs font-bold transition-all flex items-center gap-1.5"
+            >
+              <GooglePlayIcon className="w-4 h-4" />
+              <span>Google Play</span>
+            </a>
+          ) : app.status !== "Taslak" ? (
+            <button
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                onJoinBeta(app);
+              }}
+              className="px-3.5 py-1.5 rounded-lg bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 hover:text-amber-200 border border-amber-500/30 text-xs font-bold transition-all flex items-center gap-1.5"
+            >
+              <span>Testçi Ol</span>
+            </button>
+          ) : (
+            <span className="px-3.5 py-1.5 text-xs font-semibold text-gray-500">
+              Yayına hazırlanıyor
+            </span>
+          )}
         </div>
       </div>
     </div>
   );
 }
-

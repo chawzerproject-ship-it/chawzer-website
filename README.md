@@ -9,12 +9,14 @@
 
 | Uygulama | Paket Adı (Package Name) | Kategori | Durum | Gizlilik Politikası URL |
 | :--- | :--- | :--- | :--- | :--- |
+| **AGS 2027 (Akademi Giriş Sınavı)** | `com.chawzer.ags` | Eğitim & Sınav Hazırlık | Kapalı Test | `/gizlilik/ags-2027` |
 | **YKS 2027 Koçum** | `com.chawzer.yks` | Eğitim & Sınav Hazırlık | Kapalı Test | `/gizlilik/yks-2027` |
 | **KPSS Master 2026** | `com.chawzer.kpssmaster` | Eğitim & Sınav Hazırlık | Kapalı Test | `/gizlilik/kpss-master` |
 | **Kese** | `com.chawzer.kese` | Finans & Bütçe | Kapalı Test | `/gizlilik/kese` |
 | **Siberci Ol** | `com.chawzer.cyber` | Siber Güvenlik & Eğitim | Kapalı Test | `/gizlilik/siberci-ol` |
 | **YDS Master** | `com.chawzer.ydsmaster` | YDS & YÖKDİL Sınav | Kapalı Test | `/gizlilik/yds-master` |
 | **İkimiz** | `com.chawzer.ikimiz` | Yaşam Tarzı & Çiftler | Kapalı Test | `/gizlilik/ikimiz` |
+| **Fangfall: Werewolf # Vampir & Kurtadam** | `com.vampirkoylu.vampir_koylu` | Oyun & Rol Yapma / Parti | Kapalı Test | `/gizlilik/vampir-kurtadam` |
 
 ---
 
@@ -87,6 +89,7 @@ Siteniz Vercel'de yayınlandıktan sonra (örneğin `https://chawzer-website.ver
 2. Uygulamanızı seçin (Örn: **KPSS Master 2026**).
 3. Sol menüden en alttaki **Politika ve programlar > Uygulama içeriği** (App Content) bölümüne gidin.
 4. **Gizlilik Politikası (Privacy Policy)** alanına:
+   - AGS 2027 için: `https://chawzer-website.vercel.app/gizlilik/ags-2027` (veya doğrudan `https://chawzer-website.vercel.app/gizlilik/ags` ya da `https://chawzer-website.vercel.app/gizlilik-ags.html`)
    - YKS 2027 Koçum için: `https://chawzer-website.vercel.app/gizlilik/yks-2027` (veya doğrudan `https://chawzer-website.vercel.app/gizlilik/yks` ya da `https://chawzer-website.vercel.app/gizlilik-yks.html`)
    - KPSS Master için: `https://chawzer-website.vercel.app/gizlilik/kpss-master`
    - Kese için: `https://chawzer-website.vercel.app/gizlilik/kese`
@@ -96,4 +99,3 @@ Siteniz Vercel'de yayınlandıktan sonra (örneğin `https://chawzer-website.ver
    adreslerini yapıştırıp **Kaydet** butonuna basın.
 
 Bu sayede Google inceleme ekibi doğrudan Gizlilik Politikanızı onaylayacak ve kapalı test süreciniz hızla tamamlanacaktır.
-

@@ -25,6 +25,11 @@ export async function generateStaticParams() {
   list.push({ app: "kpss" }); // Alias for direct short URL
   list.push({ app: "yks" }); // Alias for direct short URL
   list.push({ app: "yks-2027" }); // Alias for direct short URL
+  list.push({ app: "ags" }); // Alias for direct short URL
+  list.push({ app: "ags-2027" }); // Alias for direct short URL
+  list.push({ app: "vampir-koylu" }); // Alias for direct short URL
+  list.push({ app: "vampirkurtadam" }); // Alias for direct short URL
+  list.push({ app: "vampirkoylu" }); // Alias for direct short URL
   return list;
 }
 
@@ -38,7 +43,9 @@ export async function generateMetadata({
     (a) =>
       a.slug === slug ||
       (slug === "kpss" && a.id === "kpss") ||
-      ((slug === "yks" || slug === "yks-2027") && a.id === "yks")
+      ((slug === "yks" || slug === "yks-2027") && a.id === "yks") ||
+      ((slug === "ags" || slug === "ags-2027") && a.id === "ags") ||
+      ((slug === "vampir-koylu" || slug === "vampirkurtadam" || slug === "vampirkoylu") && a.id === "vampirkurtadam")
   );
   if (!appData) return { title: "Gizlilik Politikası" };
 
@@ -59,15 +66,23 @@ export default async function AppPrivacyPage({
     (a) =>
       a.slug === slug ||
       (slug === "kpss" && a.id === "kpss") ||
-      ((slug === "yks" || slug === "yks-2027") && a.id === "yks")
+      ((slug === "yks" || slug === "yks-2027") && a.id === "yks") ||
+      ((slug === "ags" || slug === "ags-2027") && a.id === "ags") ||
+      ((slug === "vampir-koylu" || slug === "vampirkurtadam" || slug === "vampirkoylu") && a.id === "vampirkurtadam")
   );
 
   if (!app) {
     notFound();
   }
 
+  const isAgs = app.id === "ags";
   const isYks = app.id === "yks";
-  const effectiveDate = isYks ? "14 Kasım 2026" : "29 Ekim 2026";
+  const isFangfall = app.id === "vampirkurtadam";
+  const effectiveDate = isAgs
+    ? "21 Kasım 2026"
+    : isYks || isFangfall
+    ? "14 Kasım 2026"
+    : "29 Ekim 2026";
 
   return (
     <div className="min-h-screen bg-chawzer-bg text-gray-200">
@@ -135,13 +150,14 @@ export default async function AppPrivacyPage({
           <Shield className="w-6 h-6 text-amber-400 flex-shrink-0 mt-0.5" />
           <div className="text-xs text-gray-300 leading-relaxed space-y-1.5">
             <p className="font-bold text-amber-300 text-sm">
-              Google Play Console & App Store Resmi Uyumluluk Beyanı:
+              {isFangfall
+                ? "Fangfall Gizlilik Bilgilendirmesi:"
+                : "Google Play Console & App Store Resmi Uyumluluk Beyanı:"}
             </p>
             <p>
-              Bu sayfa; Google Play Geliştirici Program Politikaları, Google Play
-              Kullanıcı Verileri Politikası (User Data Policy), 6698 Sayılı KVKK
-              ve Avrupa Birliği Genel Veri Koruma Tüzüğü (GDPR) kurallarına tam
-              uyumlu olarak hazırlanmıştır.
+              {isFangfall
+                ? "Bu sayfa, Fangfall'ın mevcut sürümündeki çevrimdışı oyun deneyimi ve veri işleme uygulamalarını açıklar. Uygulamanın özellikleri değişirse bu politika güncellenir."
+                : "Bu sayfa; Google Play Geliştirici Program Politikaları, Google Play Kullanıcı Verileri Politikası (User Data Policy), 6698 Sayılı KVKK ve Avrupa Birliği Genel Veri Koruma Tüzüğü (GDPR) kurallarına tam uyumlu olarak hazırlanmıştır."}
             </p>
             <p className="text-gray-400">
               Bu bağlantı geçerli bir SSL sertifikasına (HTTPS) sahiptir, dünya
@@ -153,7 +169,366 @@ export default async function AppPrivacyPage({
         </div>
 
         {/* Policy Content */}
-        {isYks ? (
+        {isAgs ? (
+          <div className="space-y-8 text-sm text-gray-300 leading-relaxed">
+            <div className="p-4 rounded-xl bg-purple-500/10 border border-purple-500/30 text-purple-200 text-xs leading-relaxed">
+              <strong>Özet:</strong> Bu Gizlilik Politikası, <strong>chawzer</strong> (&quot;Geliştirici&quot;, &quot;Biz&quot;) tarafından geliştirilen <strong>AGS 2027</strong> mobil uygulamasının (&quot;Uygulama&quot;) kullanıcılarının (&quot;Kullanıcı&quot;, &quot;Siz&quot;) gizlilik haklarını korumak ve kişisel verilerin korunması mevzuatı (KVKK ve GDPR) çerçevesinde bilgilendirme yapmak amacıyla hazırlanmıştır.
+            </div>
+
+            <section className="space-y-3">
+              <h2 className="text-xl font-bold text-white text-gold-gradient flex items-center gap-2">
+                <FileText className="w-5 h-5 text-purple-400" />
+                1. Toplanan Bilgiler ve Veri Türleri
+              </h2>
+              <p>
+                Uygulamamız, kullanıcıların kişisel gizliliğine azami saygı duymaktadır. Uygulamanın temel işlevlerini sunabilmesi için aşağıdaki veri kategorileri işlenebilir:
+              </p>
+              <div className="p-4 rounded-xl bg-chawzer-card border border-chawzer-border space-y-3 text-xs">
+                <div>
+                  <strong className="text-white block text-sm mb-1">• Cihaz Üzerinde Saklanan Yerel Veriler:</strong>
+                  <p className="text-gray-300">Sınav notlarınız, yanlış çözdüğünüz sorular (Hata Havuzu), deneme net takibi geçmişiniz, favori sorularınız ve çalışma sayacı (Pomodoro) verileriniz tamamen cihazınızın yerel depolama alanında (AsyncStorage) saklanır. Bu veriler harici herhangi bir sunucuya iletilmez.</p>
+                </div>
+                <div>
+                  <strong className="text-white block text-sm mb-1">• Cihaz ve Kullanım Bilgileri:</strong>
+                  <p className="text-gray-300">Uygulama performansını izlemek, hataları tespit etmek ve reklam hizmetlerini optimize etmek amacıyla cihaz modeli, işletim sistemi sürümü ve benzersiz reklam kimliği (Google Advertising ID / IDFA) anonim olarak işlenebilir.</p>
+                </div>
+                <div>
+                  <strong className="text-white block text-sm mb-1">• Bildirim İzinleri:</strong>
+                  <p className="text-gray-300">Kullanıcının açık rızasıyla sınav geri sayım hatırlatmaları, günlük çalışma bildirimleri göndermek için bildirim izni talep edilebilir.</p>
+                </div>
+              </div>
+            </section>
+
+            <section className="space-y-3">
+              <h2 className="text-xl font-bold text-white text-gold-gradient flex items-center gap-2">
+                <Globe className="w-5 h-5 text-sky-400" />
+                2. Üçüncü Taraf Hizmetleri ve Kütüphaneler
+              </h2>
+              <p>
+                Uygulama, temel işlevlerini yerine getirmek, analiz ve reklam gösterimi sağlamak amacıyla güvenilir üçüncü taraf hizmet sağlayıcılarını kullanmaktadır:
+              </p>
+              <div className="space-y-2 text-xs">
+                <div className="p-3.5 rounded-xl bg-chawzer-card border border-chawzer-border flex items-start gap-3">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <strong className="text-white">Google AdMob (Google Inc.):</strong> Uygulama içi banner, geçiş ve ödüllü reklam gösterimleri için kullanılır. Google AdMob, kişiselleştirilmiş veya kişiselleştirilmemiş reklam sunabilmek adına çerezler ve reklam kimliklerini işleyebilir. Daha fazla bilgi için: <a href="https://policies.google.com/technologies/ads" target="_blank" rel="noopener noreferrer" className="text-amber-400 underline">Google Reklam Politikaları</a>.
+                  </div>
+                </div>
+                <div className="p-3.5 rounded-xl bg-chawzer-card border border-chawzer-border flex items-start gap-3">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0 mt-0.5" />
+                  <div>
+                    <strong className="text-white">Expo / Firebase Cloud Messaging:</strong> Uygulama bildirim altyapısını desteklemek ve teknik güncellemeleri yönetmek için kullanılır.
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section className="space-y-3">
+              <h2 className="text-xl font-bold text-white text-gold-gradient flex items-center gap-2">
+                <Shield className="w-5 h-5 text-purple-400" />
+                3. Kişisel Verilerin İşlenme Amaçları
+              </h2>
+              <p>Toplanan bilgiler aşağıdaki amaçlarla sınırlı olarak işlenmektedir:</p>
+              <ul className="list-disc list-inside space-y-1.5 text-xs text-gray-300 pl-2">
+                <li>AGS 2027 sınavına hazırlık sürecinde ders notları, testler, soru dağılımları ve akıllı hata havuzu araçlarını sunmak,</li>
+                <li>Uygulamanın kararlılığını sağlamak ve teknik çökmeleri gidermek,</li>
+                <li>Kullanıcı deneyimini iyileştirmek ve ücretsiz kullanım imkanı sağlamak için reklam gösterimi sunmak,</li>
+                <li>Yasal mevzuattan kaynaklanan yükümlülükleri yerine getirmek.</li>
+              </ul>
+            </section>
+
+            <section className="space-y-3">
+              <h2 className="text-xl font-bold text-white text-gold-gradient flex items-center gap-2">
+                <Database className="w-5 h-5 text-emerald-400" />
+                4. Çerezler ve Yerel Depolama
+              </h2>
+              <p className="text-xs text-gray-300 leading-relaxed bg-chawzer-card p-4 rounded-xl border border-chawzer-border">
+                Uygulamamız geleneksel internet çerezleri kullanmamaktadır; ancak kullanıcının sınav ve test tercihlerini, net skorlarını ve notlarını hatırlayabilmek için mobil cihazınızın yerel depolama birimini (AsyncStorage) kullanır. Bu veriler cihazınızdan uygulamanın kaldırılması veya uygulama verilerinin temizlenmesi ile tamamen silinir.
+              </p>
+            </section>
+
+            <section className="space-y-3">
+              <h2 className="text-xl font-bold text-white text-gold-gradient flex items-center gap-2">
+                <UserCheck className="w-5 h-5 text-indigo-400" />
+                5. Çocukların Gizliliği
+              </h2>
+              <p>
+                AGS 2027 uygulaması, öğretmen adayları ve Akademi Giriş Sınavı&apos;na hazırlanan yetişkin/genç adaylar için tasarlanmıştır. 13 yaşın (veya ilgili ülkenin mevzuatında belirlenen yaş sınırının) altındaki çocuklardan bilerek ve isteyerek kişisel veri toplanmaz.
+              </p>
+            </section>
+
+            <section className="space-y-3">
+              <h2 className="text-xl font-bold text-white text-gold-gradient flex items-center gap-2">
+                <Lock className="w-5 h-5 text-amber-400" />
+                6. Veri Güvenliği ve Kullanıcı Hakları
+              </h2>
+              <p>6698 Sayılı Kişisel Verilerin Korunması Kanunu (KVKK) ve Genel Veri Koruma Tüzüğü (GDPR) kapsamında her kullanıcı aşağıdaki haklara sahiptir:</p>
+              <ul className="list-disc list-inside space-y-1.5 text-xs text-gray-300 pl-2">
+                <li>Verilerinin işlenip işlenmediğini öğrenme,</li>
+                <li>İşlenmişse buna ilişkin bilgi talep etme,</li>
+                <li>Yerel depolanan verilerini uygulama içerisinden dilediği an silme veya sıfırlama,</li>
+                <li>Cihaz ayarlarından reklam kişiselleştirmesini ve bildirim izinlerini dilediği an kapatma hakkı.</li>
+              </ul>
+            </section>
+
+            <section className="space-y-3">
+              <h2 className="text-xl font-bold text-white text-gold-gradient flex items-center gap-2">
+                <Mail className="w-5 h-5 text-emerald-400" />
+                7. İletişim ve Geri Bildirim
+              </h2>
+              <p>
+                Bu Gizlilik Politikası hakkında herhangi bir sorunuz, öneriniz veya veri silme talebiniz olması durumunda bizimle doğrudan aşağıdaki iletişim kanalları üzerinden irtibata geçebilirsiniz:
+              </p>
+              <div className="p-5 rounded-2xl bg-chawzer-card border border-chawzer-border text-xs space-y-2">
+                <p className="text-white font-bold text-sm">Geliştirici: chawzer</p>
+                <p className="text-gray-300">
+                  E-Posta:{" "}
+                  <a
+                    href="mailto:chawzer.dev@gmail.com"
+                    className="text-amber-400 font-mono underline hover:text-amber-300"
+                  >
+                    chawzer.dev@gmail.com
+                  </a>{" "}
+                  /{" "}
+                  <a
+                    href={`mailto:${STUDIO_INFO.email}`}
+                    className="text-amber-400 font-mono underline hover:text-amber-300"
+                  >
+                    {STUDIO_INFO.email}
+                  </a>
+                </p>
+                <p className="text-gray-300">
+                  Instagram:{" "}
+                  <a
+                    href="https://www.instagram.com/chawzer.dev/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-amber-400 underline hover:text-amber-300"
+                  >
+                    @chawzer.dev
+                  </a>
+                </p>
+                <p className="text-gray-300">
+                  Google Play Sayfası:{" "}
+                  <a
+                    href="https://play.google.com/store/apps/details?id=com.chawzer.ags"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-amber-400 underline hover:text-amber-300"
+                  >
+                    AGS 2027 Play Store Sayfası
+                  </a>
+                </p>
+                <p className="text-gray-400 pt-2 border-t border-chawzer-border">
+                  Doğrudan Bağımsız HTML Sayfası Olarak Görüntüle:{" "}
+                  <a
+                    href="/gizlilik-ags.html"
+                    target="_blank"
+                    className="text-purple-400 underline"
+                  >
+                    /gizlilik-ags.html
+                  </a>
+                </p>
+              </div>
+            </section>
+
+            {/* English Summary for Google Play Reviewers */}
+            <section className="mt-12 pt-10 border-t border-chawzer-border/60 space-y-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-purple-500/10 border border-purple-500/25 text-purple-300 text-xs font-semibold uppercase tracking-wider">
+                <Globe className="w-3.5 h-3.5" />
+                <span>English Summary for Google Play Policy Reviewers</span>
+              </div>
+              <h2 className="text-xl font-bold text-white">
+                Official Privacy Policy Statement (English)
+              </h2>
+              <div className="space-y-3 text-xs text-gray-300 leading-relaxed bg-chawzer-surface/50 p-5 rounded-2xl border border-chawzer-border">
+                <p>
+                  <strong>Application Name:</strong> AGS 2027 (Akademi Giriş Sınavı) <br />
+                  <strong>Package ID:</strong> <code>com.chawzer.ags</code> <br />
+                  <strong>Developer:</strong> chawzer (chawzer.dev@gmail.com) <br />
+                  <strong>Effective Date:</strong> 21 November 2026
+                </p>
+                <p>
+                  <strong>1. Data Handling &amp; Privacy:</strong> The application does NOT collect or transmit sensitive personal data to developer servers. Study notes, question pool bookmarks, mistake history (Hata Havuzu), and Pomodoro stats are stored strictly locally on the device using AsyncStorage.
+                </p>
+                <p>
+                  <strong>2. Advertising &amp; Third Parties:</strong> The app integrates Google AdMob for banner and interstitial ads. AdMob may process anonymous advertising IDs (Google Advertising ID / IDFA) according to Google&apos;s privacy policies. Push notifications and crash monitoring may utilize Expo / Firebase Cloud Messaging.
+                </p>
+                <p>
+                  <strong>3. Data Deletion:</strong> All locally stored study records can be permanently deleted anytime by clearing app data via Android Settings or uninstalling the app.
+                </p>
+                <p>
+                  <strong>4. Children&apos;s Privacy:</strong> The app is targeted toward prospective teachers and adults preparing for civil service academy exams (13+). It does not knowingly collect information from children under 13.
+                </p>
+              </div>
+            </section>
+          </div>
+        ) : isFangfall ? (
+          <div className="space-y-8 text-sm text-gray-300 leading-relaxed">
+            <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs leading-relaxed">
+              <strong>Özet:</strong> Fangfall:Werewolf # Vampir &amp; Kurtadam
+              şu an tek cihazda çevrimdışı Pass &amp; Play olarak oynanır.
+              Uygulama hesabı veya online oda özelliği sunmaz; oyun verileri
+              cihazınızda işlenir ve geliştiricinin sunucularına gönderilmez.
+            </div>
+
+            <section className="space-y-3">
+              <h2 className="text-xl font-bold text-white text-gold-gradient flex items-center gap-2">
+                <FileText className="w-5 h-5 text-indigo-400" />
+                1. Kapsam ve Oyun Kullanımı
+              </h2>
+              <p>
+                Bu politika, <strong>{app.name}</strong> (
+                <code className="text-amber-300">{app.packageName}</code>)
+                uygulaması için geçerlidir. Oyun; oyuncuların aynı cihazı sırayla
+                kullandığı gizli roller, gece eylemleri ve gündüz oylaması içeren
+                bir sosyal akıl yürütme oyunudur.
+              </p>
+              <p>
+                Oyunun mevcut sürümünde online oda, çevrimiçi eşleştirme veya
+                Firebase/Supabase tabanlı bir oyun servisi bulunmaz. Online
+                özellikler sunulursa bu politika güncellenir.
+              </p>
+            </section>
+
+            <section className="space-y-3">
+              <h2 className="text-xl font-bold text-white text-gold-gradient flex items-center gap-2">
+                <Database className="w-5 h-5 text-emerald-400" />
+                2. İşlenen Bilgiler ve Yerel Saklama
+              </h2>
+              <ul className="list-disc list-inside space-y-2 pl-2">
+                <li>
+                  Üyelik, e-posta, telefon numarası veya sosyal medya hesabı
+                  oluşturmanız istenmez.
+                </li>
+                <li>
+                  Lobiye girdiğiniz oyuncu adları yalnızca cihazda, oyun
+                  oturumu sırasında kullanılır; geliştiriciye veya sunucuya
+                  gönderilmez.
+                </li>
+                <li>
+                  Oyun ayarları ve cihazda saklanması gereken ilerleme bilgileri
+                  (ör. açılan roller ve oyun içi ödül durumu) uygulamanın yerel
+                  depolama alanında tutulur. Bu kayıtlar çevrimiçi hesaba
+                  bağlanmaz veya buluta yüklenmez.
+                </li>
+                <li>
+                  GPS/konum, rehber, kamera, mikrofon, fotoğraflar, reklam
+                  kimliği veya hassas kişisel bilgiler talep edilmez.
+                </li>
+              </ul>
+              <p>
+                Uygulama oyunun çalışması için kişisel verileri Chawzer
+                sunucularında toplamaz veya saklamaz. Cihazın işletim sistemi
+                ve mağaza hizmetleri kendi teknik kayıtlarını kendi gizlilik
+                politikalarına göre işleyebilir.
+              </p>
+            </section>
+
+            <section className="space-y-3">
+              <h2 className="text-xl font-bold text-white text-gold-gradient flex items-center gap-2">
+                <Lock className="w-5 h-5 text-amber-400" />
+                3. İzinler
+              </h2>
+              <ul className="space-y-2.5">
+                {app.permissions.map((permission) => (
+                  <li
+                    key={permission}
+                    className="p-3.5 rounded-xl bg-chawzer-card border border-chawzer-border text-xs text-gray-200 flex items-start gap-3"
+                  >
+                    <Lock className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
+                    <span>{permission}</span>
+                  </li>
+                ))}
+              </ul>
+              <p>
+                Oyun ses efektlerini çalmak için mikrofon kullanmaz; ortam
+                sesini dinlemez veya kaydetmez. Titreşim izni yalnızca oyun içi
+                dokunsal geri bildirim içindir.
+              </p>
+            </section>
+
+            <section className="space-y-3">
+              <h2 className="text-xl font-bold text-white text-gold-gradient flex items-center gap-2">
+                <Globe className="w-5 h-5 text-sky-400" />
+                4. Üçüncü Taraflar ve Reklam
+              </h2>
+              <p>
+                Uygulamada reklam hedefleme veya kullanıcı davranışlarını
+                profilleme amacıyla reklam ağı ya da analitik takip SDK&apos;sı
+                kullanılmaz. Oyun verileri üçüncü taraflara satılmaz veya
+                kiralanmaz. Uygulama mağazası ve cihaz işletim sistemi
+                hizmetleri, uygulamanın dağıtımı ve temel cihaz işlevleri
+                kapsamında kendi politikalarına göre çalışabilir.
+              </p>
+            </section>
+
+            <section className="space-y-3">
+              <h2 className="text-xl font-bold text-white text-gold-gradient flex items-center gap-2">
+                <Trash2 className="w-5 h-5 text-rose-400" />
+                5. Saklama ve Verilerin Silinmesi
+              </h2>
+              <p>
+                Cihazda tutulan oyun kayıtlarını Android ayarlarından{" "}
+                <em>
+                  Ayarlar &gt; Uygulamalar &gt; Fangfall &gt; Depolama &gt;
+                  Verileri temizle
+                </em>{" "}
+                adımlarını izleyerek silebilirsiniz. Uygulamayı kaldırmak da
+                uygulamanın yerel verilerini cihazdan kaldırır. Menü adları
+                Android sürümüne göre değişebilir.
+              </p>
+            </section>
+
+            <section className="space-y-3">
+              <h2 className="text-xl font-bold text-white text-gold-gradient flex items-center gap-2">
+                <UserCheck className="w-5 h-5 text-indigo-400" />
+                6. Çocukların Gizliliği ve Kullanıcı Hakları
+              </h2>
+              <p>
+                Oyun kişisel verileri geliştiriciye iletmez. Oyuncu adı
+                alanlarına kişilerin kendileri veya birlikte oynayan kişiler
+                tarafından girilen adlar, cihazda yerel olarak işlenir.
+                Kişisel verilerinizle ilgili soru veya talebiniz için
+                geliştiriciyle iletişime geçebilirsiniz.
+              </p>
+              <p>
+                KVKK ve uygulanabilir veri koruma mevzuatı kapsamındaki
+                başvurularınızı aşağıdaki iletişim adresine iletebilirsiniz.
+                Sunucularımızda tutulmayan yerel oyun verilerini yukarıdaki
+                cihaz ayarlarından silebilirsiniz.
+              </p>
+            </section>
+
+            <section className="space-y-3">
+              <h2 className="text-xl font-bold text-white text-gold-gradient flex items-center gap-2">
+                <AlertCircle className="w-5 h-5 text-amber-400" />
+                7. Politika Değişiklikleri
+              </h2>
+              <p>
+                Uygulamanın özellikleri veya yasal gereklilikler değiştiğinde
+                bu politika güncellenebilir. Güncel metin bu sayfada
+                yayımlandığı tarihten itibaren geçerlidir.
+              </p>
+            </section>
+
+            <section className="space-y-3">
+              <h2 className="text-xl font-bold text-white text-gold-gradient flex items-center gap-2">
+                <Mail className="w-5 h-5 text-emerald-400" />
+                8. İletişim
+              </h2>
+              <p>
+                Gizlilik politikası, veri işleme veya veri silme talepleri için:
+              </p>
+              <a
+                href={`mailto:${STUDIO_INFO.email}`}
+                className="text-amber-400 underline"
+              >
+                {STUDIO_INFO.email}
+              </a>
+            </section>
+          </div>
+        ) : isYks ? (
           <div className="space-y-8 text-sm text-gray-300 leading-relaxed">
             {/* Highlight Box from User */}
             <div className="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-300 text-xs leading-relaxed">

@@ -5,7 +5,7 @@ export interface AppItem {
   packageName: string;
   category: string;
   version: string;
-  status: "Kapalı Test" | "Erken Erişim" | "Yayında";
+  status: "Taslak" | "Kapalı Test" | "Erken Erişim" | "Yayında";
   tagline: string;
   description: string;
   fullDescription: string;
@@ -33,7 +33,7 @@ export const APPS_DATA: AppItem[] = [
     packageName: "com.chawzer.kese",
     category: "Finans & Üretkenlik",
     version: "v1.0.4",
-    status: "Kapalı Test",
+    status: "Yayında",
     tagline: "Harcamalarını kontrol altına al, birikimlerini altın gibi büyüt.",
     description: "Kişisel bütçenizi, nakit akışınızı ve birikim hedeflerinizi zahmetsizce yönetebileceğiniz modern, şık ve güvenli finans asistanı.",
     fullDescription: "Kese, modern hayatın getirdiği karmaşık gelir-gider dengesini en sade ve estetik biçimde kontrol etmenizi sağlar. Reklamsız akıcı arayüzü, otomatik kategori analizleri ve offline çalışma desteği sayesinde finansal özgürlüğünüze giden yolda en güvenilir yardımcınızdır.",
@@ -66,7 +66,7 @@ export const APPS_DATA: AppItem[] = [
     packageName: "com.chawzer.cyber",
     category: "Eğitim & Teknoloji",
     version: "v1.1.2",
-    status: "Kapalı Test",
+    status: "Yayında",
     tagline: "Siber dünyanın savunucusu ol. Sıfırdan uzmanlığa etik hacking.",
     description: "Siber güvenlik temelleri, ağ protokolleri, sızma testleri ve etik hacking dünyasına dair interaktif rehber ve pratik bilgi kaynağı.",
     fullDescription: "Siberci Ol, siber güvenlik alanında kariyer yapmak veya dijital dünyada kendini ve sistemlerini korumak isteyenler için hazırlanmış kapsamlı bir eğitim platformudur. Kriptografi, web zafiyetleri, Linux komutları ve savunma stratejilerini pratik örneklerle öğretir.",
@@ -99,7 +99,7 @@ export const APPS_DATA: AppItem[] = [
     packageName: "com.chawzer.ydsmaster",
     category: "Eğitim & Sınav Hazırlık",
     version: "v1.0.8",
-    status: "Kapalı Test",
+    status: "Yayında",
     tagline: "Hedef puana giden en hızlı yol. Akıllı kelime ve soru sistemi.",
     description: "YDS, YÖKDİL ve YDT sınavlarına hazırlananlar için aralıklı tekrar (spaced repetition) tekniğiyle akademik kelime ve soru çözümü.",
     fullDescription: "YDS Master, akademik yabancı dil sınavlarında en yüksek puanı almanız için geliştirilmiş odaklanmış bir sınav koçudur. Çıkmış sınav kelimeleri, edat kalıpları (phrasal verbs), bağlaçlar ve sınav stratejilerini bilimsel hafıza teknikleriyle zihninize kazır.",
@@ -132,7 +132,7 @@ export const APPS_DATA: AppItem[] = [
     packageName: "com.chawzer.ikimiz",
     category: "Yaşam Tarzı & Sosyal",
     version: "v1.0.3",
-    status: "Kapalı Test",
+    status: "Yayında",
     tagline: "Birlikte geçen her saniyeyi ölümsüzleştirin. Sadece ikinize özel.",
     description: "İlişkinizin en güzel anlarını, yıldönümlerini, özel fotoğraflarını ve randevu planlarını saklayabileceğiniz şifreli, romantik ortak alan.",
     fullDescription: "İkimiz, sevgiliniz veya eşinizle aranızdaki bağı güçlendirmek ve ortak hatıralarınızı güvenle saklamak için tasarlandı. Canlı ilişki günü sayacı, ortak yapılacaklar listesi, özel anı defteri ve sevgi notları ile ilişkinizi her zaman taze tutar.",
@@ -201,7 +201,7 @@ export const APPS_DATA: AppItem[] = [
     packageName: "com.chawzer.yks",
     category: "Eğitim & Sınav Hazırlık",
     version: "v1.0.0",
-    status: "Kapalı Test",
+    status: "Taslak",
     tagline: "Hedef İlk 1000. TYT & AYT soru bankası, akıllı sınav koçu ve hata defteri.",
     description: "YKS 2027 sınavına hazırlanan adaylar için özgün TYT & AYT soruları, aralıklı tekrar kartları, yapay zeka destekli sınav koçu ve offline çalışma desteği.",
     fullDescription: "YKS 2027 Koçum & Soru Bankası, üniversite sınavına hazırlanan lise ve mezun öğrenciler için tasarlanmış yeni nesil dijital hazırlık platformudur. Müfredata %100 uyumlu özgün soru havuzu, offline çalışabilen soru çözümü, hata defteri, akıllı koçluk ve aralıklı tekrar algoritmalarıyla başarıya ulaştırır.",
@@ -229,6 +229,80 @@ export const APPS_DATA: AppItem[] = [
       { label: "Soru Modülü", value: "TYT / AYT" },
       { label: "Veri Güvenliği", value: "KVKK & GDPR" }
     ]
+  },
+  {
+    id: "vampirkurtadam",
+    slug: "vampir-kurtadam",
+    name: "Fangfall:Werewolf # Vampir & Kurtadam (Social Deduction)",
+    packageName: "com.chawzer.fangfall",
+    category: "Oyun & Rol Yapma / Parti",
+    version: "v1.2.0",
+    status: "Taslak",
+    tagline: "Karanlık çökünce gözlerini kapa. Kasabada gizem, rol ve eğlence başlıyor!",
+    description: "Tek telefondan yüz yüze oynanan, 3D ahşap taktil tasarımlı, sevimli Pixar tarzı karakterli ve gizli oy kabinli efsanevi Vampir & Kurtadam parti oyunu.",
+    fullDescription: "Vampir & Kurtadam, arkadaş grupları ve aileler için geliştirilmiş pass-and-play (elden ele) tarzı gizli rol, strateji ve sosyal dedüksiyon oyunudur. Kurtadamlar, Köylüler, Vampirler, Kahin, Doktor, Avcı, Soytarı, Cadı ve 13'ten fazla rol ile kasabayı savunabilir veya geceleri sinsice avlanabilirsiniz. Gizli oy sandığı, organik 3D ahşap menüleri ve gerçekçi ses efektleriyle (kurt uluması, horoz ötüşü, mahkeme tokmağı) unutulmaz bir rol yapma deneyimi sunar.",
+    icon: "/apps/vampir.png",
+    gradient: "from-amber-600/20 via-orange-600/10 to-transparent",
+    accentColor: "#E5A65E",
+    borderColor: "group-hover:border-amber-500/50",
+    features: [
+      "Tek cihazdan yüz yüze Pass & Play oynanış (Gizlilik Kalkanlı rol devri)",
+      "Tamamen gizli oy verme kabini (kimse kimin kime oy verdiğini göremez)",
+      "Sevimli 3D Pixar tarzı karakter ve rol sanatı (Kurt, Köylü, Kahin, Doktor vb.)",
+      "Gelişmiş Manuel Rol ve Denge Ayarı (Köylü >= 3x Kurt garantisi)",
+      "Dahili ses sentezleyici (Kurt uluması, sabah horozu, saat tik-takları, tokmak ve yas melodisi)",
+      "Tamamen internetsiz (Offline) çalışabilen, veri toplamayan güvenli altyapı"
+    ],
+    testersCount: 20,
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.chawzer.fangfall",
+    targetAudience: "Arkadaş grupları, parti oyunu ve kutu oyunu severler (Tüm Yaş Grupları)",
+    privacySummary: "Oyunumuz tamamen cihazınızda yerel olarak çalışır. Hiçbir kişisel veri, ses kaydı, konum veya cihaz kimliği toplanmaz, sunuculara aktarılmaz veya üçüncü taraflarla paylaşılmaz.",
+    permissions: [
+      "Titreşim İzni (android.permission.VIBRATE - dokunsal geri bildirim için)",
+      "Ses Çalma (Dahili ses efektleri ve müzikler için)"
+    ],
+    stats: [
+      { label: "Rol Sayısı", value: "13+ Rol" },
+      { label: "Oyuncu Desteği", value: "4 - 20 Kişi" },
+      { label: "Veri Gizliliği", value: "%100 Yerel (Offline)" }
+    ]
+  },
+  {
+    id: "ags",
+    slug: "ags-2027",
+    name: "AGS 2027 (Akademi Giriş Sınavı)",
+    packageName: "com.chawzer.ags",
+    category: "Eğitim & Sınav Hazırlık",
+    version: "v1.0.0",
+    status: "Kapalı Test",
+    tagline: "Milli Eğitim Akademisi Giriş Sınavı'na eksiksiz hazırlık, testler ve hata havuzu.",
+    description: "Öğretmen adayları için AGS 2027 sınavına hazırlık: güncel mevzuat, eğitim teorileri, genel yetenek & kültür testleri, akıllı hata havuzu ve Pomodoro sayacı.",
+    fullDescription: "AGS 2027 (Akademi Giriş Sınavı), Milli Eğitim Bakanlığı Akademi Giriş Sınavı'na hazırlanan öğretmen adayları için geliştirilmiş kapsamlı mobil çalışma istasyonudur. Güncel sınav konu dağılımları, branş denemeleri, ders özetleri, çözülen yanlış soruları biriktiren Hata Havuzu ve odaklanma araçları içerir.",
+    icon: "/apps/ags.png",
+    gradient: "from-purple-500/20 via-violet-500/10 to-transparent",
+    accentColor: "#7C3AED",
+    borderColor: "group-hover:border-purple-500/50",
+    features: [
+      "AGS 2027 müfredatına tam uyumlu konu testleri ve denemeler",
+      "Akıllı Hata Havuzu: Yanlış çözülen soruları otomatik biriktirme ve tekrar etme",
+      "Yerel depolama (AsyncStorage) ile çevrimdışı çalışma desteği",
+      "Pomodoro çalışma sayacı ve sınav geri sayım takibi",
+      "Kişiselleştirilmiş net takip grafikleri ve gelişim analitiği"
+    ],
+    testersCount: 15,
+    playStoreUrl: "https://play.google.com/store/apps/details?id=com.chawzer.ags",
+    targetAudience: "Milli Eğitim Akademisi Giriş Sınavı'na hazırlanan tüm öğretmen adayları",
+    privacySummary: "Sınav notlarınız, yanlış soru havuzunuz ve çalışma süreleriniz tamamen cihazınızın yerel depolama alanında (AsyncStorage) saklanır. Harici sunuculara kişisel veri iletilmez.",
+    permissions: [
+      "Yerel Depolama (AsyncStorage - test kayıtları ve hata havuzu için)",
+      "Bildirim İzni (İsteğe bağlı - sınav hatırlatmaları ve Pomodoro uyarıları)",
+      "İnternet Erişimi (Google AdMob reklamları ve teknik güncellemeler için)"
+    ],
+    stats: [
+      { label: "Hedef Sınav", value: "AGS 2027" },
+      { label: "Özellik", value: "Hata Havuzu" },
+      { label: "Veri Güvenliği", value: "KVKK & GDPR" }
+    ]
   }
 ];
 
@@ -242,7 +316,7 @@ export const STUDIO_INFO = {
   googleGroupEmail: "chawzer-test-ekibi@googlegroups.com",
   googleGroupUrl: "https://groups.google.com/g/chawzer-test-ekibi",
   playStoreConsoleUrl: "https://play.google.com/store/apps/developer?id=CHAWZER",
-  totalApps: 6,
+  totalApps: 8,
   location: "Türkiye",
   foundationYear: "2026"
 };
